@@ -1,0 +1,5 @@
+.build
+Build/node_modules/*
+composer.lock
+*.cache
+nbproject

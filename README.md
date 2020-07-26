@@ -1,2 +1,8 @@
 # my_extension
-Test TYPO3 Extension
+
+TYPO3 Demo Extension
+
+## Quick Start
+
+- `ddev composer install`
+- `ddev composer test`

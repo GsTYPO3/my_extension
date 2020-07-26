@@ -1,0 +1,68 @@
+{
+    "name": "my-vendor/my-extension",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "homepage": "https://example.com",
+    "license": ["GPL-3.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "require": {
+        "phpdocumentor/reflection-docblock": "<5.2.0",
+        "typo3/cms-core": "^10.4"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.3.1",
+        "overtrue/phplint": "^1.1",
+        "typo3/minimal": "^10.4",
+        "typo3/testing-framework": "^5.0 || ^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyVendor\\MyExtension\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MyVendor\\MyExtension\\Tests\\": "Tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "vendor-dir": ".build/vendor",
+        "bin-dir": ".build/bin"
+    },
+    "scripts": {
+        "test:php:cgl": [
+            "php-cs-fixer --diff -v fix"
+        ],
+        "test:php:lint": [
+            "phplint"
+        ],
+        "test:php:unit": [
+            "phpunit -c Build/phpunit-unit.xml"
+        ],
+        "test:php:functional": [
+            "phpunit -c Build/phpunit-functional.xml"
+        ],
+        "test": [
+            "@test:php:cgl",
+            "@test:php:lint",
+            "@test:php:unit",
+            "@test:php:functional"
+        ],
+        "post-autoload-dump": [
+            "mkdir -p .build/public/typo3conf/ext/",
+            "[ -L .build/public/typo3conf/ext/my_extension ] || ln -snvf ../../../../. .build/public/typo3conf/ext/my_extension"
+        ]
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "my_extension",
+            "web-dir": ".build/public",
+            "app-dir": ".build"
+        },
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
