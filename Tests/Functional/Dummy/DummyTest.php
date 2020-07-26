@@ -37,7 +37,6 @@ class DummyTest extends FunctionalTestCase
             'baseurl' => 'https://example.com',
         ];
         $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['my_extension'] = $extConf;
-        $backend = new Dummy();
-        $baseUrl = $backend->getBaseUrl();
+        self::assertSame((new Dummy())->getBaseUrl(), $extConf['baseurl']);
     }
 }
