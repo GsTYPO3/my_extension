@@ -1,10 +1,10 @@
 {
     "name": "my-vendor/my-extension",
+    "description": "TYPO3 Demo Extension",
     "type": "typo3-cms-extension",
-    "description": "",
-    "homepage": "https://example.com",
+    "keywords": ["TYPO3 CMS", "Extension", "Demo", "Test"],
+    "homepage": "https://github.com/GsTYPO3/my_extension#readme",
     "license": ["GPL-3.0-or-later"],
-    "keywords": ["TYPO3 CMS"],
     "require": {
         "phpdocumentor/reflection-docblock": "<5.2.0",
         "typo3/cms-core": "^10.4"
