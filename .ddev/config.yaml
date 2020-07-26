@@ -10,6 +10,10 @@ additional_hostnames: []
 additional_fqdns: []
 mariadb_version: "10.4"
 provider: default
+hooks:
+  post-start:
+  - exec: composer install -d /var/www/html
+  - exec: touch /var/www/html/.build/public/FIRST_INSTALL
 use_dns_when_possible: true
 
 
