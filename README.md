@@ -1,6 +1,6 @@
 # my_extension
 
-TYPO3 Demo Extension
+TYPO3 Extension to demonstrate the easy development and testing with [DDEV Local](https://ddev.com/).
 
 ## System Requirements
 
