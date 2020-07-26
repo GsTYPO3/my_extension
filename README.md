@@ -24,7 +24,7 @@ Clone this repository and start the project:
 ## Run Tests
 
 - `ddev composer test` -> run all tests
-- `ddev composer test:php:functional` -> run functional tests, see composer.json
+- `ddev composer test:php:functional` -> run functional tests, see [composer.json](composer.json#L35-L46)
   for more options
 
 ## License
